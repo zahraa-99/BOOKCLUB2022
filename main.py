@@ -30,6 +30,11 @@ def dispaly_groups():
     list_of_reviews = db.execute('SELECT title FROM book_review ORDER BY title;')
     return render_template('display_contents.html')
 
+@main_app.route('/comments')
+def display_comments():
+    list_of_comments = db.execute('SELECT comment FROM comments ORDER BY comment;')
+    return render_template('display_contents.html')
+
 
 #displaying review (when clicked)
 @main_app.route('/reviews/<review_id>')
